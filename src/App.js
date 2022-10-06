@@ -11,7 +11,7 @@ import FriendsDetails from './components/Navbar/FriendsDetails';
 function App() {
   const router = createBrowserRouter([
     {path: '/', element: <Main></Main>, children:[
-      {path:'/home', loader: async () =>{
+      {path:'home', loader: async () =>{
         return fetch('https://jsonplaceholder.typicode.com/users')
       },
        element: <Home></Home>},
@@ -19,9 +19,9 @@ function App() {
         return fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
       },
        element: <FriendsDetails></FriendsDetails>},
-      {path: '/about', element: <About></About>},
-      {path: '/contact', element: <Contact></Contact>},
-    {path: '/Products', element: <Products></Products>},
+      {path: 'about', element: <About></About>},
+      {path: 'contact', element: <Contact></Contact>},
+    {path: 'Products', element: <Products></Products>},
     {path: '*', element: <div>This route is not found!</div>},
     ]},
   ])
